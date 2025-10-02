@@ -16,6 +16,18 @@ void clearScreen() {
 #endif
 }
 
+void sleepSeconds(int seconds) {
+#ifdef _WIN32
+    Sleep(seconds * 1000); 
+#else
+    // Простой цикл задержки для Linux/Mac
+    clock_t start_time = clock();
+    while (clock() < start_time + seconds * CLOCKS_PER_SEC) {
+        // Пустой цикл ожидания
+    }
+#endif
+}
+
 void displayHeader() {
     cout << "========================================\n";
     cout << "           FRACTION CALCULATOR          \n";
@@ -176,6 +188,9 @@ int main() {
             clearScreen();
             cout << "Thank you for using Fraction Calculator!\n";
             cout << "Goodbye!\n";
+
+            sleepSeconds(2);
+            clearScreen();
             break;
         }
         
