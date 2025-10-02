@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.10)
+project(FractionCalculator)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# var1
+add_executable(fraction_app 
+    main.cpp
+    fraction.cpp
+)
+
+#var2
+add_executable(fraction_calculator 
+    fraction_calculator.cpp
+    fraction.cpp
+)
+
+#var3
+add_executable(fraction_calculator
+    fraction_calculator_advanced.cpp
+    fraction.cpp
+)
